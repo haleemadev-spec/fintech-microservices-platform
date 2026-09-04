@@ -314,4 +314,4 @@ It emphasizes Java 21, Spring Boot, microservices, REST APIs, PostgreSQL, Redis,
 
 ## Author
 
-Haleema
+Halimatou Diallo
