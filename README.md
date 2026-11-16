@@ -3,24 +3,17 @@
 A Java 21 and Spring Boot microservices project for a fintech backend, organised as a multi-module Maven build with independent services for accounts, payments and fraud detection, behind a Spring Cloud Gateway API gateway.
 
 The project is a learning and portfolio project. Its goal is to practise service boundaries, REST API design, persistence, caching and automated testing in a distributed backend. The sections below state clearly what is implemented, what is only structured, and what is planned.
-
 ## Target architecture
 
+Clients call a single API gateway (Spring Cloud Gateway), which routes requests to three independent services:
 
-                      API Gateway
-                  (Spring Cloud Gateway)
-                           |
-          +----------------+----------------+
-          |                |                |
-   Account Service   Payment Service   Fraud Service
-          |                |                |
-      PostgreSQL       PostgreSQL       PostgreSQL
-          \                |                /
-                          Redis
+- Account Service
+- Payment Service
+- Fraud Service
 
+Each service is designed to persist its data in PostgreSQL, with Redis as a shared cache.
 
-This diagram shows the intended design. Not every connection in it is implemented yet (see Current status).
-
+This describes the intended design. Not every connection is implemented yet (see Current status).
 ## Current status
 
 **Implemented**
